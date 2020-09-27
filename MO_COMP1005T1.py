@@ -1,0 +1,11 @@
+name = input("What's your name? ")
+age = input("How old are you? ")
+hometown = input("Where are you from? ")
+major = input("What are you studying? ")
+hobbies = input("What do you like to do outside of school? ")
+
+print ("Hello, my name is", name)
+print ("I am", age, "years old")
+print ("I live in", hometown)
+print ("I am studying", major)
+print ("I like to do", hobbies)
