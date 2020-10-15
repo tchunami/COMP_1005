@@ -40,18 +40,27 @@ def read_file():
 #3 Search for string and calculate the number of occurrences.
 def search_file():
     try:
-        f = open("assignment2.txt").read()
+        # opens .txt file to read text then start search and figure out the number of occurances.
+        f = open("assignment2.txt", "r")
+        # reads the lines from the file into a list
+        lines = f.readlines()
         while True:
-            # variable
-            word = str(input("\nEnter a string to calculate number of occurances in the text: "))
-            count = f.count(word)
+            # get user input and convert to lowercase
+            word = input("\nEnter a string to calculate number of occurances in the text: ").lower()
+            # initialize count variable
+            count = 0
+        
+            # check each line for occurences and add to count
+            for line in lines:
+                count += line.lower().count(word)
+        
             # no specific text is found on file
             if count == 0:
                 print("\nWord not found, try again.")
-            # found text on file    
+                break
+            # found text on file
             else:
-                count = f.count(word)
-                print("\nThe word chosen, ", word, ", occurs ", count," times. \n\n\nYou are now back on the main menu.")
+                print("\nThe text chosen,", word, ", occurs", count, "times. \n\n\nYou are now back on the main menu.")
                 break
     except IOError:
         print("\nError: there is no file to be searched. Write text on file first.")
