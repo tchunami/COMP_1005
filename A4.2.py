@@ -69,7 +69,7 @@ def merge_sort(math_list, science_list):
                 merged.append(math_list[i])
                 i = i + 1
             else:
-                merged.append(science_list[j]) # is science grade is less than math grade append the science grade to the new list
+                merged.append(science_list[j]) # if science grade is less than math grade append the science grade to the new list
                 j = j + 1
         
         while(i < math_converted): 
